@@ -1,11 +1,13 @@
 ﻿Part1();
 Part2();
 
-void Part1() {
+void Part1()
+{
     var position = 0;
     var depth = 0;
 
-    void PerformCommand(string cmdStr) {
+    void PerformCommand(string cmdStr)
+    {
         var cmdSplit = cmdStr.Split(' ');
         var cmd = cmdSplit[0];
         var units = int.Parse(cmdSplit[1]);
@@ -31,15 +33,17 @@ void Part1() {
         PerformCommand(command);
     }
 
-    Console.WriteLine("Part 1: [position: {0}] * [depth: {1}] = {2}", position, depth, position*depth);
+    Console.WriteLine("Part 1: [position: {0}] * [depth: {1}] = {2}", position, depth, position * depth);
 }
 
-void Part2() {
+void Part2()
+{
     var position = 0;
     var depth = 0;
     var aim = 0;
 
-    void PerformCommand(string cmdStr) {
+    void PerformCommand(string cmdStr)
+    {
         var cmdSplit = cmdStr.Split(' ');
         var cmd = cmdSplit[0];
         var units = int.Parse(cmdSplit[1]);
@@ -48,7 +52,7 @@ void Part2() {
         {
             case "forward":
                 position += units;
-                depth += units*aim;
+                depth += units * aim;
                 break;
             case "up":
                 aim -= units;
@@ -66,5 +70,5 @@ void Part2() {
         PerformCommand(command);
     }
 
-    Console.WriteLine("Part 2: [position: {0}] * [depth: {1}] = {2}", position, depth, position*depth);
+    Console.WriteLine("Part 2: [position: {0}] * [depth: {1}] = {2}", position, depth, position * depth);
 }
